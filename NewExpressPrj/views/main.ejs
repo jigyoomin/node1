@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='https://ssl.pstatic.net/static.sports/resources/pc/2017/11/27/143854/css/nsports.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src='/javascripts/main.js'></script>
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <p>Welcome to Main. Hello <strong><%= name %></strong></p>
+  <a href="/users/modify"> 회원정보 수정 </a>
+  <a href="/users/logout"> 로그아웃 </a>
+  <fieldset>
+    <form id="searchForm">
+      <input type="text" name="keyword" autofocus required placeholder="팀 검색" />
+      <input type="submit" value="검색" />
+    </form>
+    <div id="searchView" style="display:none">
+      <h3>
+            <strong>검색어</strong>
+            <span id='rowsCnt'>(검색된 개수)</span>
+          </h3>
+    </div>
+
+    <div class="record_tbl" id="wfootballTeamRecordBody">
+      <table summary="팀 순위" cellspacing="0">
+        <caption>팀 순위</caption>
+        <colgroup>
+          <col width="45">
+          <col width="*">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">
+              <div class="inner">
+                <strong>순위</strong>
+              </div>
+            </th>
+            <th scope="col" class="align_l">
+              <div class="inner">
+                <strong>팀</strong>
+              </div>
+            </th>
+            <th scope="col">
+              <div class="inner">
+                <strong>경기수</strong>
+              </div>
+            </th>
+            <!-- [D] 선택된 카테고리 활성화 강조 테두리 selected 클래스 추가 -->
+            <th scope="col" class="selected">
+              <a href="javascript:wfootballTeamRecordSortByColumn('gainPoint');" class="inner">
+                        <strong class="sort">승점</strong>
+                    </a>
+            </th>
+            <th scope="col">
+              <a href="javascript:wfootballTeamRecordSortByColumn('won', 'lost', 'manyFew');" class="inner">
+                        <strong class="sort">승</strong>
+                    </a>
+            </th>
+            <th scope="col">
+              <a href="javascript:wfootballTeamRecordSortByColumn('drawn', 'lost', 'manyFew');" class="inner">
+                        <strong class="sort">무</strong>
+                    </a>
+            </th>
+            <th scope="col">
+              <a href="javascript:wfootballTeamRecordSortByColumn('lost', 'won', 'manyFew');" class="inner">
+                        <strong class="sort">패</strong>
+                    </a>
+            </th>
+            <th scope="col">
+              <a href="javascript:wfootballTeamRecordSortByColumn('gainGoal', 'loseGoal', 'manyFew');" class="inner">
+                        <strong class="sort">득점</strong>
+                    </a>
+            </th>
+            <th scope="col">
+              <a href="javascript:wfootballTeamRecordSortByColumn('loseGoal', 'gainGoal', 'manyFew');" class="inner">
+                        <strong class="sort">실점</strong>
+                    </a>
+            </th>
+            <th scope="col">
+              <a href="javascript:wfootballTeamRecordSortByColumn('goalGap', 'gainGoal', 'manyMany');" class="inner">
+                        <strong class="sort">득실차</strong>
+                    </a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <div id="dataView"></div>
+        </tbody>
+      </table>
+    </div>
+  </fieldset>
+
+
+
+</body>
+
+</html>

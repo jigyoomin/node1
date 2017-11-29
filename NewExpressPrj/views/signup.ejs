@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='/javascripts/users.js'></script>
+</head>
+<body>
+	<h3>회원가입</h3>
+	<fieldset>
+		<form id="signupForm" action="/main/upload" method="post" enctype="multipart/form-data">
+			아이디 : <input type="text" name="uid" required/>
+      <br/>
+      패스워드 : <input type="password" name="upw" required/>
+      <br/>
+      이름 : <input type="text" name="name" required/>
+			<br/>
+			파일업로드 : <input type="file" name="file" />
+			<br/>
+			<input type="submit" value="가입">
+		</form>
+	</fieldset>
+</body>
+</html>
